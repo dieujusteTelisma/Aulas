@@ -15,9 +15,15 @@ namespace ConsoleApp2
         {
 
             string testePrimitivo = string.Empty;
-            String outroTestePrimitivo = string.Empty;
+            String outroTestePrimitivo;
+
             bool testComp = "123" == "123";
             Boolean testeComp = "123" == "123";
+
+            bool? testeBoolnull; // significa que vai ser null 
+
+            int numeroInteiro = 999;
+            long numeroInteiroLongo = 8598215;
 
             var testeFora = string.Empty;
             testeFora = "teste";
