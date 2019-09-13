@@ -10,25 +10,39 @@ namespace Exercicio7
     {
         static void Main(string[] args)
         {
-            int total = 0;
+           
             // Procure a quantidade de vogais:
-             //r vowels = new HashSet<char> { 'a', 'e', 'i', 'o', 'u' };
+            Console.WriteLine("indforme um texto");
+            var texto = Console.ReadLine();
+            var letter = 'a';
 
-          string vowels =  
+
+            //ring vowels = ("a , e ,i ,o ,u ");
+
+            if (texto.Contains('a'))
+                
+
+            Console.WriteLine(letter++);
+            Console.ReadKey();
 
             //nsole.WriteLine("Enter a Sentence");
-           //tring sentence = Console.ReadLine().ToLower();
+            //tring sentence = Console.ReadLine().ToLower();
 
-         // for (int i = 0; i < sentence.Length; i++)
-           //
-           //   if (vowels.Contains(sentence[i]))
+            //r (int i = 0; i < texto.Length; i++)
+            //
+            //   if (vowels.Contains(sentence[i]))
             //  {
-            //      total++;
+          //total++;
              // }
            //
            //onsole.WriteLine("Your total number of vowels : {0}", total);
 
-            Console.ReadLine();
+         // Console.ReadLine();
         }
+
     }
 }
+
+
+
+          
