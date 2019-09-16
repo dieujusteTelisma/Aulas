@@ -8,16 +8,47 @@ namespace AprendendoOList
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            var  minhaListaPulmatica = new List<string>()
+        static List<string> minhaListaPulgmatica = new List<string>()
             {
                 "Felipe",
                 "Irineu",
                 "Serilop"
-            }
+            };
+        static void Main(string[] args)
+        {
+            AdicionarItensALista();
 
-                
-      }
+            ListaInformacoes();
+
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// Metodo que adiciona um item a lista
+        /// </summary>
+        private static void AdicionarItensALista()
+        {
+            Console.Clear();
+            Console.WriteLine("informe um nome:");
+            minhaListaPulgmatica.Add(Console.ReadLine());
+            Console.Clear();
+
+            Console.WriteLine("Deseja informar mais valores? sim(S) qualquer outra tecla para não");
+
+            if (Console.ReadKey().KeyChar.ToString().ToLower() == "s")
+                AdicionarItensALista();
+        }
+
+        /// <summary>
+        /// Metodo que mostra a lista
+        /// </summary>
+        private static void ListaInformacoes()
+        {
+
+            Console.Clear();
+            Console.WriteLine(  "Nomes adicionados a lista");
+            foreach (var item in minhaListaPulgmatica)
+                Console.WriteLine($" Nome: {item} foi adicionado na lista ");
+        }
     }
 }
