@@ -16,11 +16,11 @@ namespace CalcularNumeroPrimos
 
 
             Console.WriteLine("informe um numero");
-            if (numeroPrimo % 2 == 0)
-            }
+         //   if (numeroPrimo % 2 == 0)
+          //  }
                 
-            }
-
+          ///  }
+        //
 
 
         }
