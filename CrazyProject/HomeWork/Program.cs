@@ -1,21 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.Text;
-using System.Threading.Tasks;
-
+using static System.Net.Mime.MediaTypeNames;
+using Brushes = System.Drawing.Brushes;
+using Color = System.Drawing.Color;
+using Image = System.Drawing.Image;
 namespace HomeWork
 {
     class Program
     {
+       
+
         static void Main(string[] args)
         {
-
+          //  Iniciar();
         }
 
-        public static void DesignTree()
-        {
-            Console.WriteLine();
-        }
+        
     }
 }
