@@ -12,4 +12,4 @@ namespace MinhaSegundaClasse.Model
         public int  Quantidade { get; set; } }
 
     }
-}
+
