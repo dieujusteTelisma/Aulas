@@ -59,8 +59,11 @@ namespace InterfaceBiblioteca
                     case 4:
                         Console.Clear();
                         while (!RealizaLoginSistema())
+                        {
                             Console.WriteLine("Login e senha inválidos");
+                        }
 
+                       
                         break;
                     default:
                         break;
@@ -93,6 +96,7 @@ namespace InterfaceBiblioteca
         /// estiverem corretos.</returns>
         private static bool RealizaLoginSistema()
         {
+            Console.Clear();
             Console.WriteLine("Informe seu login e senha para acessar o sistema:");
 
             Console.WriteLine("Login:");
