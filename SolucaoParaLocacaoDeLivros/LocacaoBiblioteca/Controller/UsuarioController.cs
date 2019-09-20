@@ -21,20 +21,48 @@ namespace LocacaoBiblioteca.Controller
         /// senha : Admin
         /// </summary>
         /// <param name="usuarios"></param>  passamos um bojeto de nome usuario como parametrologin do usuario dentro do sistema
-        
+
         /// <returns></returns> retorna verdaddeiro quando existir o usuario com este login e senha
         //   public bool LoginSistema(string login , string senha)
 
-         public bool LoginSistema(Usuario usuarios)
+        public bool LoginSistema(Usuario usuarios)
 
 
 
         {
-            if (usuarios.Login == "Admin" && usuarios.Senha == "Admin")
-                return true;
-            else
-                return false;
+            //   if (usuarios.Login == "Admin" && usuarios.Senha == "Admin")
+            //     return true;
+            // else
+            //    return false;
+
+            return Usuario.Exists(x =>
+            x.Login == usuarios.Login
+            && x.Senha == usuarios.Senha);
+
         }
-            
+
+
+        public UsuarioController()
+        {
+
+            Usuario = new List<Usuario>();
+
+            Usuario.Add(new Usuario()
+            {
+                Login = "admin",
+                Senha = "admin"
+            });
+
+            Usuario.Add(new Usuario()
+            {
+                Login = "admin",
+                Senha = "admin"
+            });
+
+
+        }
+
+        // public List<Livro> Livros { get; set; }
+        public List<Usuario> Usuario { get; set; }
     }
 }
