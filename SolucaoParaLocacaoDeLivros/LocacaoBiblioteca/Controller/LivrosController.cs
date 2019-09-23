@@ -28,5 +28,14 @@ namespace LocacaoBiblioteca.Controller
         }
 
         public List<Livro> Livros { get; set; }
+        /// <summary>
+        /// Metodo que adiciona o livro em nossa lista ja " instancia" criada endro do
+        /// construtor
+        /// </summary>
+        /// <param name="parametroLivro"></param> Imformacoes do livro que vamod adicionar
+        public void AdicionarLivro(Livro parametroLivro)
+        {
+            Livros.Add(parametroLivro);
+        }
     }
 }

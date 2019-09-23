@@ -14,6 +14,8 @@ namespace LocacaoBiblioteca.Controller
     public class UsuarioController
     {
 
+        //criando privado para impedir o programador de adicionar um ID ou alterar fora da classe
+        private int IdContador = 0;
         /// <summary>
         /// Metodo que realiza o login dentro do nosso sistema
         /// para realizar o login parao use 
@@ -49,12 +51,8 @@ namespace LocacaoBiblioteca.Controller
 
             Usuario.Add(new Usuario()
             {
-                Login = "admin",
-                Senha = "admin"
-            });
-
-            Usuario.Add(new Usuario()
-            {
+                //adiciono o ID contador incrementando o mesmo com ele + 1 "++"
+                Id = IdContador++,
                 Login = "admin",
                 Senha = "admin"
             });
@@ -64,5 +62,16 @@ namespace LocacaoBiblioteca.Controller
 
         // public List<Livro> Livros { get; set; }
         public List<Usuario> Usuario { get; set; }
+
+        /// <summary>
+        /// Metodo usado para adicionar um novo usuario no sistema
+        /// </summary>
+        /// <param name="parametroUsuario">Novo usuario qu sera adicionado a lista </param>
+        public void AdicionarUsuario(Usuario parametroUsuario)
+        {
+            parametroUsuario.Id = IdContador++;
+            //Adicionar o meu usuario a minha lista de usuario (Usuario é minha lista)
+            Usuario.Add(parametroUsuario);
+        }
     }
 }

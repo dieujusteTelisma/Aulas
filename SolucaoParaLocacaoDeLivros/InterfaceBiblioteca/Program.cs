@@ -11,8 +11,8 @@ namespace InterfaceBiblioteca
 {
     class Program
     {
-        static LivrosController livros = new LivrosController();
-        static UsuarioController usuario = new UsuarioController();
+        static LivrosController livrosController = new LivrosController();
+        static UsuarioController usuarioController = new UsuarioController();
         static void Main(string[] args)
         {
             Console.WriteLine("SISTEMA DE LOCAÇÃO DE LIVRO 1.0");
@@ -38,7 +38,8 @@ namespace InterfaceBiblioteca
                 Console.WriteLine("1 - Listar usuários");
                 Console.WriteLine("2 - Listar Livros");
                 Console.WriteLine("3 - Cadastrar Livro");
-                Console.WriteLine("4 - Fazer logof");
+                Console.WriteLine("4 - Cadastrar Usuario");
+                Console.WriteLine("5- Fazer logof");
                 Console.WriteLine("0 - Sair");
                 //Aqui vamos pegar numero digitado
                 menuEscolhido = int.Parse(Console.ReadKey(true).KeyChar.ToString());
@@ -48,40 +49,98 @@ namespace InterfaceBiblioteca
                     case 1:
                         MostrarUsuario();
 
-                       break;
+                        break;
 
                     case 2:
                         MostrarLivro();
                         break;
                     case 3:
-                        //MostrarLivro();
+                        AdicionarLivro();
                         break;
                     case 4:
+                        AdicionarUsuario();
+                        break;
+
+                    case 5:
                         Console.Clear();
                         while (!RealizaLoginSistema())
                         {
                             Console.WriteLine("Login e senha inválidos");
                         }
 
-                       
                         break;
                     default:
                         break;
                 }
             }
         }
+        /// <summary>
+        /// Metodo que adiciona dentro de nossa lista um novo registro de livro
+        /// </summary>
+        private static void AdicionarLivro()
+        {
+            //Identificamos que o mesmo esta na parte de cadastro de livros do sistema
+            Console.WriteLine("Cadastrar livro dentro do sistema");
+            //Informamos que para dar continuidade ele deve informar um nome para olivro
+            Console.WriteLine("Nome do livro para cadastro:");
+            //obtemos esta info do usuario 
+            var nomeDoLivro = Console.ReadLine();
+            //com isso temos temos disponivel nele ferramentas que nos ajudam a realizar as tarefas 
+            //como adicionar um item a nossa lista de livros 
+            livrosController.AdicionarLivro(new Livro()
+            {
+                //Aqui "Atribuimos " o nome que devemos ao livro na propriedade Nome de nossolivro 
+                //com o sinal de apenas um "=" temos atribuicao , passagem de valor 
+                Nome = nomeDoLivro
+            });
 
+            //indico que finalizamos o processo de cadastro do livro , assim o usuario ja sabe 
+            //que  o mesmo foi realizado e sem erros 
+            Console.WriteLine("Livro cadastro com sucesso!");
+            //Readkey apenas para que ele visualize esta informacão
+            Console.ReadKey();
+        }
+
+        //-------------------------
+
+        private static void AdicionarUsuario()
+        {
+            
+            Console.WriteLine("Cadastrar Usuario dentro do sistema");
+            Console.WriteLine(" -------^^-----------^^-----------^^-------");
+            Console.WriteLine(" Login do usuario para cadastro:");
+            var loginDoUsuario = Console.ReadLine();
+
+            Console.WriteLine(" Senha do usuario para cadastro:");
+            var SenhaDoUsuario = Console.ReadLine();
+
+ 
+            usuarioController.AdicionarUsuario(new Usuario()
+            {
+                //Aqui "Atribuimos " o nome que devemos ao usuario na propriedade Nome de nossolivro 
+                //com o sinal de apenas um "=" temos atribuicao , passagem de valor 
+                Login = loginDoUsuario,
+                Senha = SenhaDoUsuario
+            });
+
+            //indico que finalizamos o processo de cadastro do Usuario , assim o usuario ja sabe 
+            //que  o mesmo foi realizado e sem erros 
+            Console.WriteLine("Usuario cadastrado com sucesso!");
+            //Readkey apenas para que ele visualize esta informacão
+            Console.ReadKey();
+        }
         private static void MostrarLivro()
         {
-            livros.Livros.ForEach(i =>
+            livrosController.Livros.ForEach(i =>
             Console.WriteLine($"Nome do livro:{i.Nome}"));
 
             Console.ReadKey();
         }
         private static void MostrarUsuario()
         {
-            usuario.Usuario.ForEach(i =>
-            Console.WriteLine($"o login do usuario é :{i.Login}"));
+            //Aqui andamos pela lista de usuarios e mostramos ela no console
+            usuarioController.Usuario.ForEach(i =>
+            Console.WriteLine($"Id :{i.Id} login usuario {i.Login}"));
 
             Console.ReadKey();
         }
@@ -105,7 +164,8 @@ namespace InterfaceBiblioteca
             Console.WriteLine("Senha:");
             var senhaDoUsuario = Console.ReadLine();
 
-            UsuarioController usuarioController = new UsuarioController();
+            //devemos apagar esta linha para que ele possa enregistrar cada usuario cadastrado
+           // UsuarioController usuarioController = new UsuarioController();
 
             return usuarioController.LoginSistema(new Usuario()
             {
