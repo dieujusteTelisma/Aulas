@@ -95,5 +95,6 @@ namespace LocacaoBiblioteca.Controller
             //Com isso conseguimos acessar as propriedades dele e desativar o registro
             Usuario.FirstOrDefault(x => x.Id == identificadoID).Ativo = false;
         }
+        
     }
 }

@@ -10,5 +10,9 @@ namespace LocacaoBiblioteca.Model
     {
         public string Nome { get; set; }
         public int Id { get; set; }
+        public bool Ativo { get; internal set; } = true;
+
     }
+
+        
 }

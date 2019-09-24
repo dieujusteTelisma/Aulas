@@ -49,7 +49,17 @@ namespace LocacaoBiblioteca.Controller
         /// <returns></returns>
         public List<Livro> RetornaLivros()
         {
-            return Livros;
+            return Livros.Where(x => x.Ativo).ToList<Livro>();
+        }
+
+     
+      
+        public void RemoverLivroPorId(int identificadoID)
+        {
+            //AQUI USAMOS O METODO firstOrDefault para localizar nosso usuario dentro da lista
+            //Com isso conseguimos acessar as propriedades dele e desativar o registro
+           Livros.FirstOrDefault(x => x.Id == identificadoID).Ativo = false;
+
         }
 
     }

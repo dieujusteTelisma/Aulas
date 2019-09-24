@@ -40,7 +40,8 @@ namespace InterfaceBiblioteca
                 Console.WriteLine("3 - Cadastrar Livro");
                 Console.WriteLine("4 - Cadastrar Usuario");
                 Console.WriteLine("5 - Remover Usuario");
-                Console.WriteLine("6- Fazer logof");
+                Console.WriteLine("6 - Remover livro");
+                Console.WriteLine("7- Fazer logof");
                 Console.WriteLine("0 - Sair");
                 //Aqui vamos pegar numero digitado
                 menuEscolhido = int.Parse(Console.ReadKey(true).KeyChar.ToString());
@@ -65,6 +66,9 @@ namespace InterfaceBiblioteca
                         RemoverUsuarioPeloID();
                              break;
                     case 6:
+                        RemoverLivroPeloID();
+                        break;
+                    case 7:
                         Console.Clear();
                         while (!RealizaLoginSistema())
                         {
@@ -93,6 +97,24 @@ namespace InterfaceBiblioteca
 
             //Informamos que o usuario foi desativado com sucesso
             Console.WriteLine("Usuario desativado com sucesso");
+            Console.ReadKey();
+        }
+
+        private static void RemoverLivroPeloID()
+        {
+            Console.WriteLine("Remover livro pelo id no sistema");
+            //Metodo que mostra os usuarios criado anteriormente
+            // o usuario informar id correto para desativar 
+            MostrarLivro();
+
+            Console.WriteLine("Informe o ID para desativar do sistema");
+            var livroID = int.Parse(Console.ReadLine());
+
+            //aqui chamamos RemoverUsuarioPorID da nosssa classe que controla os usuarios do sistema
+            livrosController.RemoverLivroPorId(livroID);
+
+            //Informamos que o usuario foi desativado com sucesso
+            Console.WriteLine("livro desativado com sucesso");
             Console.ReadKey();
         }
         /// <summary>
