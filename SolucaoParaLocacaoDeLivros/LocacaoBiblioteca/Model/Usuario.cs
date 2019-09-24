@@ -14,7 +14,7 @@ namespace LocacaoBiblioteca.Model
         public string Login { get; set; }
 
         public string Senha { get; set; }
-        public bool Ativo { get; set; }
+        public bool Ativo { get; set; } = true; // para que todos os usuarios cadastrado vao ser ativo 
 
         public int UsuarioCriacao { get; set; }
 

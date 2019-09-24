@@ -39,7 +39,8 @@ namespace InterfaceBiblioteca
                 Console.WriteLine("2 - Listar Livros");
                 Console.WriteLine("3 - Cadastrar Livro");
                 Console.WriteLine("4 - Cadastrar Usuario");
-                Console.WriteLine("5- Fazer logof");
+                Console.WriteLine("5 - Remover Usuario");
+                Console.WriteLine("6- Fazer logof");
                 Console.WriteLine("0 - Sair");
                 //Aqui vamos pegar numero digitado
                 menuEscolhido = int.Parse(Console.ReadKey(true).KeyChar.ToString());
@@ -60,8 +61,10 @@ namespace InterfaceBiblioteca
                     case 4:
                         AdicionarUsuario();
                         break;
-
                     case 5:
+                        RemoverUsuarioPeloID();
+                             break;
+                    case 6:
                         Console.Clear();
                         while (!RealizaLoginSistema())
                         {
@@ -73,6 +76,24 @@ namespace InterfaceBiblioteca
                         break;
                 }
             }
+        }
+
+        private static void RemoverUsuarioPeloID()
+        {
+            Console.WriteLine("Remover um usuario pelo id no sistema");
+            //Metodo que mostra os usuarios criado anteriormente
+            // o usuario informar id correto para desativar 
+            MostrarUsuario();
+
+            Console.WriteLine("Informe o ID para desativar do sistema");
+            var usuarioID = int.Parse(Console.ReadLine());
+
+            //aqui chamamos RemoverUsuarioPorID da nosssa classe que controla os usuarios do sistema
+            usuarioController.RemoverUsuarioPorId(usuarioID);
+
+            //Informamos que o usuario foi desativado com sucesso
+            Console.WriteLine("Usuario desativado com sucesso");
+            Console.ReadKey();
         }
         /// <summary>
         /// Metodo que adiciona dentro de nossa lista um novo registro de livro
@@ -105,7 +126,7 @@ namespace InterfaceBiblioteca
 
         private static void AdicionarUsuario()
         {
-            
+
             Console.WriteLine("Cadastrar Usuario dentro do sistema");
             Console.WriteLine(" -------^^-----------^^-----------^^-------");
             Console.WriteLine(" Login do usuario para cadastro:");
@@ -114,7 +135,7 @@ namespace InterfaceBiblioteca
             Console.WriteLine(" Senha do usuario para cadastro:");
             var SenhaDoUsuario = Console.ReadLine();
 
- 
+
             usuarioController.AdicionarUsuario(new Usuario()
             {
                 //Aqui "Atribuimos " o nome que devemos ao usuario na propriedade Nome de nossolivro 
@@ -131,15 +152,15 @@ namespace InterfaceBiblioteca
         }
         private static void MostrarLivro()
         {
-            livrosController.Livros.ForEach(i =>
-            Console.WriteLine($"Nome do livro:{i.Nome}"));
+            livrosController.RetornaLivros().ForEach(i =>
+            Console.WriteLine($"Id : {i.Id} Nome do livro:{i.Nome}"));
 
             Console.ReadKey();
         }
         private static void MostrarUsuario()
         {
             //Aqui andamos pela lista de usuarios e mostramos ela no console
-            usuarioController.Usuario.ForEach(i =>
+            usuarioController.RetornaListaDeUsuarios().ForEach(i =>
             Console.WriteLine($"Id :{i.Id} login usuario {i.Login}"));
 
             Console.ReadKey();
@@ -165,7 +186,7 @@ namespace InterfaceBiblioteca
             var senhaDoUsuario = Console.ReadLine();
 
             //devemos apagar esta linha para que ele possa enregistrar cada usuario cadastrado
-           // UsuarioController usuarioController = new UsuarioController();
+            // UsuarioController usuarioController = new UsuarioController();
 
             return usuarioController.LoginSistema(new Usuario()
             {

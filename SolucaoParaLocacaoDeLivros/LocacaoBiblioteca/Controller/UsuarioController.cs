@@ -15,7 +15,7 @@ namespace LocacaoBiblioteca.Controller
     {
 
         //criando privado para impedir o programador de adicionar um ID ou alterar fora da classe
-        private int IdContador = 0;
+        private int IdContador = 1;
         /// <summary>
         /// Metodo que realiza o login dentro do nosso sistema
         /// para realizar o login parao use 
@@ -61,7 +61,7 @@ namespace LocacaoBiblioteca.Controller
         }
 
         // public List<Livro> Livros { get; set; }
-        public List<Usuario> Usuario { get; set; }
+        private List<Usuario> Usuario { get; set; }
 
         /// <summary>
         /// Metodo usado para adicionar um novo usuario no sistema
@@ -72,6 +72,28 @@ namespace LocacaoBiblioteca.Controller
             parametroUsuario.Id = IdContador++;
             //Adicionar o meu usuario a minha lista de usuario (Usuario é minha lista)
             Usuario.Add(parametroUsuario);
+        }
+
+        /// <summary>
+        /// Metodo que retorna nossa lista interna de usuarios
+        /// </summary>
+        /// <returns>lista contendo os usuarios </returns>
+        /// este metodo foi criado so porque a gente declara  private List<Usuario> Usuario { get; set; } como privado para nao poder criar outro usuario dentro do parentses que esta dentro do metodo adicionarusuario
+        public List<Usuario> RetornaListaDeUsuarios()
+        {
+            //retorna agora somente a lista de usuario ativos
+            return Usuario.Where(x => x.Ativo).ToList<Usuario>();
+        }
+
+        /// <summary>
+        /// Metodo que desativa um registro de usuario cadastrado em nosa lista
+        /// </summary>
+        /// <param name="identificadoID"> Parametro que identifica o usuario que sera desativado</param>
+        public void RemoverUsuarioPorId(int identificadoID)
+        {
+            //AQUI USAMOS O METODO firstOrDefault para localizar nosso usuario dentro da lista
+            //Com isso conseguimos acessar as propriedades dele e desativar o registro
+            Usuario.FirstOrDefault(x => x.Id == identificadoID).Ativo = false;
         }
     }
 }
