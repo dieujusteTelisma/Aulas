@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9587DB48-3297-48C8-A13F-1FEDAF537C1C}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>LocacaoBiblioteca</RootNamespace>
-    <AssemblyName>LocacaoBiblioteca</AssemblyName>
+    <ProjectGuid>{96FAC9BD-E592-4989-901E-D4CB9470A3B8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>InterfaceProgram</RootNamespace>
+    <AssemblyName>InterfaceProgram</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,10 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ManageCar">
+      <HintPath>..\ManageCar\bin\Debug\ManageCar.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,16 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\LivrosController.cs" />
-    <Compile Include="Controller\UsuarioController.cs" />
-    <Compile Include="Model\Livro.cs" />
-    <Compile Include="Model\LocacaoContext.cs" />
-    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="CarController.cs" />
+    <Compile Include="CarPoperty.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
