@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{96FAC9BD-E592-4989-901E-D4CB9470A3B8}</ProjectGuid>
+    <ProjectGuid>{3C7A5EC8-FEBB-4102-AA84-855865543ED4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>InterfaceProgram</RootNamespace>
-    <AssemblyName>InterfaceProgram</AssemblyName>
+    <RootNamespace>ListarCarrosDoAmigo</RootNamespace>
+    <AssemblyName>ListarCarrosDoAmigo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,8 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ManageCar">
-      <HintPath>..\ManageCar\bin\Debug\ManageCar.dll</HintPath>
+    <Reference Include="ListagemDeCarros, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\svprwy001\alunos\hbsis\DllsComComentarios\35\ListagemDeCarros.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -13,8 +13,15 @@ namespace ManageCar.Controller
         
         private ManageCarContext contextDB = new ManageCarContext();
         
+
         public CarController()
         {
+
         }
+       public void listar()
+        {
+            contextDB.ListaDeCarros.ForEach(x => Console.WriteLine($"id: {x.Id} carro: {x.Carro}"));
+        }
+   
     }
 }

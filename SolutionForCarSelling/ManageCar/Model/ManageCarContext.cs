@@ -6,23 +6,30 @@ using System.Threading.Tasks;
 
 namespace ManageCar.Model
 {
-    class ManageCarContext
+    public class ManageCarContext
     {
-        public int IdContadorCar { get; set; } = 1;
+       // public int IdContadorCar { get; set; } = 1;
 
         public ManageCarContext()
         {
-            var carControl = new List<CarPoperty>();
+            ListaDeCarros = new List<CarPoperty>();
 
-          
-        
-            carControl.Add(new CarPoperty()
+            ListaDeCarros.Add(new CarPoperty()
             {
                 Id = 1,
                 Carro = "Risus Company",
                 Valor = 7.200,
                 Data = DateTime.Parse("29/01/2019")
             });
+
+            ListaDeCarros.Add(new CarPoperty()
+            {
+                Id = 2,
+                Carro = "Risus Associates",
+                Valor = 9.961,
+                Data = DateTime.Parse("10/02/2019")
+            });
+
 
         }
         public List<CarPoperty> ListaDeCarros { get; set; }
