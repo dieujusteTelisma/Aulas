@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ListagemDeCarros.Controller
 {
-    class CarroController
+   public class CarroController
     {
         SistemaCarrosContext sistemCarrosContext = new SistemaCarrosContext();
 
