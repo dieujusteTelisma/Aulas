@@ -90,6 +90,10 @@ select SUM(ven.Quantidade) from Vendas ven
    --Trazer o valor total de vendas em cada ano e ordenar do maior para o menor	
 
 
+select SUM(ven.Quantidade) from Vendas ven 
+group by DatInc
+
+   where ven.DatInc >= '2019-01-01' and ven.DatInc <= '2019-12-31'
 
 
 select * from Vendas
