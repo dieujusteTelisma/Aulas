@@ -23,7 +23,7 @@ namespace AcessandoEnity
                 });
 
             aluno.GetAlunos().ToList<Aluno>()
-                           .ForEach(x => Console.WriteLine(x.Nome));
+                           .ForEach(x => Console.WriteLine($" nome {x.Nome} Idade {x.Idade} "));
             Console.ReadKey();
         }
     }
