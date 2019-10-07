@@ -87,3 +87,4 @@ GROUP BY pro.Nome -- Agrupamos por nome os pedidos pois em pedidos podemos ter i
 ORDER BY 'Quantidade' DESC -- E finalmente ordenamos pela quantidade solicitada do item em nossa tabela de pedidos
 
 
+--we
