@@ -7,9 +7,10 @@ namespace CodeFirstTeste.Model
 
     public partial class CervejaContextDb : DbContext
     {
-        public CervejaContextDb()
-            : base("name=CervejaContextDb")
+        public CervejaContextDb(string conexao) // contrutor pede a conexao com o banco de dados
+            : base(conexao)
         {
+
         }
 
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
