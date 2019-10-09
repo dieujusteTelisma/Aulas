@@ -12,6 +12,7 @@ namespace CodeFirstTeste.Controller
     {
         //iniciamos nossa base de dados na controller 
         CervejaContextDb contextDB =
+            // a gente foi no app.configuracao para pegar este data source em baixo para permitir a execucao sem erro 
             new CervejaContextDb(@"data source=(localdb)\MSSQLLocalDB;initial catalog=RevisandoEntity.Model.CervejaContextDB;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         public void AddCerveja(Cerveja item)
         {
