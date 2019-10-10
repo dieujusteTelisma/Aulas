@@ -14,10 +14,15 @@ namespace LocacaoBiblioteca.Model
     {
         [Key]
         public int Id { get; set; }
+        [MaxLength(30)]
+        [Required]
         public string Nome { get; set; }
+        [MaxLength(30)]
+        [Required]
         public string Tipo { get; set; }
-
-        public int Preco { get; set; }
+        
+        [Required]
+        public double Preco { get; set; }
         public bool Ativo { get; set; } = true;
         public int UsuarioCriacao { get; set; } = 1;
         public int UsuarioAlteracao { get; set; } = 1;
