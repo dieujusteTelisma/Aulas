@@ -1,10 +1,14 @@
-﻿using PutBicicletas.Controller;
+﻿using Newtonsoft.Json;
+using PutBicicletas.Controller;
 using PutBicicletas.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+
 
 namespace InterfaceBicicleta
 {
@@ -37,6 +41,8 @@ namespace InterfaceBicicleta
 
                 Console.WriteLine("4- Listar Bicicleta ");
 
+                Console.WriteLine("5- Mostrar  Bicicleta ");
+
                 Console.WriteLine("0 - Sair");
 
                 //obtemos o menu escolhido pelo usuario 
@@ -61,7 +67,7 @@ namespace InterfaceBicicleta
 
                     case 2:
 
-                        AtualizarBicicleta(); 
+                        AtualizarBicicleta();
 
                         break;
 
@@ -74,6 +80,11 @@ namespace InterfaceBicicleta
                     case 4:
 
                         ListarBicicleta();
+
+                        break;
+                    case 5:
+
+                        MostrarBicicleta();
 
                         break;
 
@@ -141,21 +152,21 @@ namespace InterfaceBicicleta
 
             var resultado = bicicletas// Nossa controler pelo nome 
 
-                //que demos a ela 
+            //que demos a ela 
 
             .InserirBicicleta(new Bicicleta()// uma nova bicicleta
 
-                {
+            {
 
-                    Marca = marca,
+                Marca = marca,
 
-                    Modelo = modelo,
+                Modelo = modelo,
 
-                    Preco = preco
+                Preco = preco
 
 
 
-              });
+            });
 
 
 
@@ -328,6 +339,53 @@ namespace InterfaceBicicleta
             Console.ReadKey();
 
             Console.Clear();
+        }
+
+        public static void MostrarBicicleta()
+
+        {
+            Console.WriteLine("Deseja exportar as  Bicicletas? (1) sim (2) nao");
+
+            var resposta = Console.ReadLine();
+
+            if (resposta == "1")
+            {
+
+
+               var listaBicicleta =  bicicletas.GetBicicletas().OrderByDescending(x => x.Preco).ToList<Bicicleta>();
+                listaBicicleta.ForEach(x => Console.WriteLine($"Marca : {x.Marca} Modelo: {x.Modelo} Valor: { x.Preco}"));
+                string jsonLista = JsonConvert.SerializeObject(listaBicicleta);
+                string caminho = ("C: \\Users\\900102\\source\\repos\\feverwebster\\Aulas\\CadastroDeBicicletas\\Json\\ListaJson.txt");
+                File.WriteAllText(caminho,jsonLista);
+                var total = bicicletas.GetBicicletas().Sum(x => x.Preco);
+                Console.WriteLine($"A soma total das Bicicletas é : {total}");
+
+
+                
+                return;
+            }
+
+            else if (resposta == "2")
+            {
+                Console.WriteLine("Pressione qualquer tecla para voltar ao menu inicial");
+                Console.ReadKey(true);
+            }
+
+
+            Console.ReadKey();
+
+
+
+           
+
+             
+
+            Console.WriteLine("");
+
+            Console.ReadKey();
+
+
+
         }
     }
 }
