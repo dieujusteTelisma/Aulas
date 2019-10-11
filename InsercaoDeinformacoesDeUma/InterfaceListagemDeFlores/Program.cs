@@ -22,7 +22,7 @@ namespace InterfaceListagemDeFlores
                 //Apresentacao do menu inicial
                 Console.WriteLine("Escolha um nenu");
                 Console.WriteLine("1- inserir Flores");
-                Console.WriteLine("2- Atualizar Flores");
+                Console.WriteLine("2- Mostrar Flores");
                 Console.WriteLine("3- Remover FLores");
                 Console.WriteLine("4- Listar Flores ");
                 Console.WriteLine("0 - Sair");
@@ -35,7 +35,13 @@ namespace InterfaceListagemDeFlores
                     //caso fo opcao 1 ele inseri celular 
                     case 1:
                         InsertFlor();
-                  
+                      
+
+                       break;
+                    case 2:
+                        MostrarFlores();
+
+
                         break;
                     case 0:
                         //informamos que estamos saindo do sistema
@@ -71,6 +77,7 @@ namespace InterfaceListagemDeFlores
                 {
                     Nome = nome,
                     Quantidade = quantidade
+
                   
 
                 });
@@ -82,6 +89,19 @@ namespace InterfaceListagemDeFlores
 
             Console.ReadKey();
             Console.Clear();
+
+            
         }
+          public static void MostrarFlores()
+            {
+            flores.GetFlore().OrderByDescending(x => x.Quantidade).ToList<Flore>().ForEach(x => Console.WriteLine($"Nome : {x.Nome} Quantidade: {x.Quantidade}"));
+            var total = flores.GetFlore().Sum(x => x.Quantidade);
+            Console.WriteLine($"A soma total de flores é : {total}");
+            Console.WriteLine("");
+            Console.ReadKey();
+                
+          }
+        
+
     }
 }

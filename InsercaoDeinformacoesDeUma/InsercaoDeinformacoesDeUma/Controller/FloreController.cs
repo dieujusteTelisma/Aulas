@@ -19,6 +19,7 @@ namespace InsercaoDeinformacoesDeUma.Controller
                 .Where//indicamos que vamos realizar um filtro 
                 (x => x.Ativo == true); // as condicoes do filtro
 
+
         }
 
 
