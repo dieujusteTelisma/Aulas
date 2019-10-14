@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Formulario de Cadastro</title>
+
+    <style>
+
+        #documentos {
+            position: absolute;
+            left: 40%;
+            width: 30%;
+            height: 80%;
+            margin-bottom: 50%;
+            margin-top: 100px;
+            box-shadow: 1px 1px 8px #795548;
+            background-color:#2098a2d6;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="documentos">
+        <div id="titulo">
+            <form action="/pagina-processa-dados-do-form" method="post">
+                <div>
+
+                    <input   style="width :35%; margin-left: 30%;"  type="text"  id="name" placeholder="Nome" />
+
+                    <br><br>
+                </div>
+
+                <div>
+
+                    <input style="width :20%; margin-left: 30%;" type="text" id="Nacionalidade" placeholder="Nacionalidade" />
+
+
+                    <input style="width :13%" type="number" id="Idade" placeholder="idade" />
+                    <br><br>
+                </div>
+
+                <div>
+
+                    <input style="width :20%" type="number" id="CPF" placeholder="CPF" />
+
+
+                    <input style="width :13%"  type="number" id="Data" placeholder="Dat Nasc" />
+                   
+                    <br><br>
+                </div>
+
+
+                <div class="button">
+                    <button style="margin-left: 35%;" type="submit">Enviar Informacão</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+</html>
