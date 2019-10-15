@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HTML", "HTML", "{ED837C03-B
 		..\..\WEB\ElementosHTML.html = ..\..\WEB\ElementosHTML.html
 		FormularioDeCadastro.html = FormularioDeCadastro.html
 		..\..\WEB\InformacaoDeTexto.html = ..\..\WEB\InformacaoDeTexto.html
+		Login.html = Login.html
 		MeuPrimeiroHTML.html = MeuPrimeiroHTML.html
 		RedacaoWeb.html = RedacaoWeb.html
 		TelaDeLogin.html = TelaDeLogin.html
