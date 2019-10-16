@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IniciancoWeb", "IniciancoWeb", "{40045594-3C67-47BD-9ADF-740935BA0B14}"
+	ProjectSection(SolutionItems) = preProject
+		Greeting.html = Greeting.html
+		Index.html = Index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{5DA02EC3-74FA-4218-9A85-FFF04BFAD505}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts.js = Scripts.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{A1B7A684-395E-420C-9C84-3DE3FA242D27}"
+	ProjectSection(SolutionItems) = preProject
+		styles.css = styles.css
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5DA02EC3-74FA-4218-9A85-FFF04BFAD505} = {40045594-3C67-47BD-9ADF-740935BA0B14}
+		{A1B7A684-395E-420C-9C84-3DE3FA242D27} = {40045594-3C67-47BD-9ADF-740935BA0B14}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66B91E64-523C-4FEA-BB9F-CE1678D7AB0F}
+	EndGlobalSection
+EndGlobal

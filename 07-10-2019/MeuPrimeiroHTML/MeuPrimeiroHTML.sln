@@ -4,14 +4,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HTML", "HTML", "{ED837C03-B360-4EFC-A316-670478D4A483}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{DB8D61BE-A358-4514-95F6-7F4C865A0100}"
+	ProjectSection(SolutionItems) = preProject
+		Style.css = Style.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IniciandoWeb", "IniciandoWeb", "{56A81554-3A57-4A45-88C3-72A271380FDA}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\WEB\ElementosHTML.html = ..\..\WEB\ElementosHTML.html
 		FormularioDeCadastro.html = FormularioDeCadastro.html
 		FormularioFinal.html = FormularioFinal.html
+		Indexx.html = Indexx.html
 		..\..\WEB\InformacaoDeTexto.html = ..\..\WEB\InformacaoDeTexto.html
 		Login.html = Login.html
 		MeuPrimeiroHTML.html = MeuPrimeiroHTML.html
 		RedacaoWeb.html = RedacaoWeb.html
+		scripts.js = scripts.js
 		TelaDeLogin.html = TelaDeLogin.html
 		..\..\WEB\web2.html = ..\..\WEB\web2.html
 		..\..\WEB\wee.html = ..\..\WEB\wee.html
@@ -20,6 +29,9 @@ EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DB8D61BE-A358-4514-95F6-7F4C865A0100} = {56A81554-3A57-4A45-88C3-72A271380FDA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4CF8FE41-C702-41E2-B910-E445B3ADCEB2}
