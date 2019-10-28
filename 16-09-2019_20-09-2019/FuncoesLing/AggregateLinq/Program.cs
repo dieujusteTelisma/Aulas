@@ -21,7 +21,8 @@ namespace AggregateLinq
             };
 
             var texto = listaDeNomes
-                //No Aggregate temos o nome atul que estamos lendo 
+                //No Aggregate temos o 4
+                // nome atul que estamos lendo 
                 //e o proximo nome da lista 
                 .Aggregate((nome1, nome2) => nome1 + ";\r\n" + nome2);
                 //No passo seguinte temos o ome proximo vira o atual

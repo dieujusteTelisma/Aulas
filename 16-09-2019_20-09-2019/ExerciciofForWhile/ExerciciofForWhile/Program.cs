@@ -29,8 +29,8 @@ namespace ExerciciofForWhile
             for (int i = 0; i < lengthText; i++)
             {
                 var comparedWord = contentToFind[i].ToString() +
-                                   contentToFind[i + 1].ToString() +
-                                   contentToFind[i + 2].ToString();
+                                   contentToFind[i + 1].ToString();
+                               // contentToFind[i + 2].ToString();
                 if (wordFind == comparedWord)
                     contWordFInd++;
             }
