@@ -17,6 +17,8 @@ namespace ConsoleMigration
             Console.WriteLine(x.Nome));
             Console.ReadKey();
         }
+
+        //// o postman substuir o console 
         //Enable-Migrations exrevendo isso no console para ver as imigrations que foram feito ou as modificacoes vai aparecer 
         //esta pasta de imigrations 
         //Update-DataBase para faer update  
