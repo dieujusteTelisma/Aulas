@@ -12,10 +12,10 @@ using WebApiBancoExistente.Models;
 
 
 
-// vamos criar um banco de dados para nossa applicacao vamos peggar um banco existente 
+// vamos criar um banco de dados para nossa applicacao vamos peggar um banco existente  este passo a gente faz sempre que a gente ja tem um base de dados existente e a gente quer pegar el
 // vamos pegar obanco de dadosinner join 
 // primeiro vamos na pasta model add depois escolher new item depois data escolhe Ado.net empty depois code first from database 
-//Vamos clicar no new connection depois escrevemos no server name (localdb)\MSQLLOCALDB e no campo select data base vamos selecionar nosso 
+//Vamos clicar no new connection depois escrevemos no server name (localdb)\MSSQLLocalDB e no campo select data base vamos selecionar nosso 
 //data baser innerjoind depois vamos cliar no OK e Depois clicar no teste conection Depois ok , next  e selecionar todo 
 //Depois finsish  vai aparecer todoa as tabelas Depois vamos criar a pasta controlle. 
 //a criacao da pasta controller é igual que ja criamos na SitemaPessoaWebAPI
