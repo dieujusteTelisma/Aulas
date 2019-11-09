@@ -10,6 +10,8 @@ namespace WebAPIWork
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+
+            // tems 
             config.EnableCors();
 
             // Web API routes
